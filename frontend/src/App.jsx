@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import SignUp from "./components/SignUp";
 import LoggedIn from "./components/LoggedIn";
+import TopRaces from "./components/TopRaces";
+import CreateRace from "./components/CreateRace";
 
 
 
@@ -54,10 +56,18 @@ function App() {
 	return (
 		<Router>
 		  <Routes>
+			
+			<Route path="topraces" element={<TopRaces />} /> 
+
 			<Route path="/" element={<HomePage />} />
+
 			<Route path="/signup" element={<SignUp />} />
+
 			{/* Some people name it /races or /dashboard, etc. */}
 			<Route path="/:username" element={<LoggedIn />} />
+
+			 {/* Create race form */}
+			 <Route path="/createrace" element={<CreateRace />} />
 		  </Routes>
 		</Router>
 	  );

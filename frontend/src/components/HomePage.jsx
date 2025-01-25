@@ -3,26 +3,39 @@ import "../styles/HomePage.css";
 import { useNavigate } from "react-router-dom";
 
 function HomePage() {
+
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
 
 
   const validateCredentials = (user, pass) => {
-    if (!user || !pass) return false;
+    
+    // need to check database
+    if (!user || !pass) 
+      {
+        alert("Invalid credentials.");
+        return false;
+      }
+
+  
 
     return true;
   }
 
   const handleLogin = () => {
     if (validateCredentials(username, password)) {
-      // navigate to /:username, e.g. /alice
+      // navigate to the proper username address
       navigate(`/${username}`);
     } else {
       alert("Invalid credentials. Please try again.");
     }
   };
 
+  const handleRacesButton = () => {
+    navigate()
+  };
 
 
   return (
@@ -31,7 +44,12 @@ function HomePage() {
       <nav className="navbar">
         <button className="nav-button">Stats</button>
         <button className="nav-button">DevBlog</button>
-        <button className="nav-button">Races</button>
+        
+        
+
+        <button className="nav-button" onClick={() => navigate("/topraces")}>
+          Races
+        </button>
       </nav>
 
 
@@ -52,8 +70,6 @@ function HomePage() {
           <h1>RaceToChall</h1>
           <p>Create a race for the new season or sign up as a competitor</p>
         </header>
-
-
 
         <div className="home-actions">
 
