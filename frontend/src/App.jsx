@@ -1,7 +1,22 @@
 import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import "./App.css";
+//import "./App.css";
+import HomePage from './components/HomePage.jsx';
+
+
+/*import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+import HomePage from './components/HomePage';
+
+import LoginPage from './components/LoginPage';
+import SignUpPage from './components/SignUpPage';
+import ContestPage from './components/CalendarView';
+import ProfilePage from './components/TodoListView';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+*/
 
 /*
 This is the starting point of our application. Here, we can begin coding 
@@ -33,31 +48,11 @@ function App() {
 	}, []);
 
 	return (
-		<>
-			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-
-				{/* Here's a trick you can use! If you want to render a JSX element only when a
-				state variable becomes not `null` (i.e. truthy), you can do a short circuit
-				operation with `&&`. */}
-				{randomItem && (
-					<p>The item retrieved from the backend has an ID of {randomItem}</p>
-				)}
-			</div>
-			<p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-		</>
+		
+		<div>
+			<HomePage />
+		</div>
+		
 	);
 }
 

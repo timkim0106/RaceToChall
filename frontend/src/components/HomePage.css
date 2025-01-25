@@ -1,0 +1,132 @@
+/* HomePage.css */
+
+/* Page Layout */
+.page-wrapper {
+    min-height: 100vh;
+    margin: 0;
+    background: #5b4f39; /* A brownish background color */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* NAV BAR */
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #3c2f1d;
+    padding: 10px 20px;
+  }
+  
+  .nav-button {
+    margin-left: 15px;
+    padding: 8px 14px;
+    background-color: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  /* MAIN CONTENT WRAPPER */
+  .main-content {
+    display: flex;
+    padding: 20px;
+  }
+  
+  /* LEFT SECTION (LOGIN) */
+  .login-section {
+    width: 220px;
+    padding: 20px;
+    background-color: #81725b;
+    border-radius: 8px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .login-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .label {
+    color: #fff;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .login-button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  /* CENTER SECTION (TITLE, DESCRIPTION, IMAGES) */
+  .center-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .images-and-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .side-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+  }
+  
+  .text-container {
+    margin: 0 30px;
+  }
+  
+  .site-title {
+    margin: 0;
+    font-size: 2rem;
+    color: #f0f0f0;
+  }
+  
+  .site-description {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #ddd;
+    max-width: 350px;
+  }
+  
+  .sign-up-container {
+    margin-top: auto;
+  }
+  
+  .sign-up-link {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
