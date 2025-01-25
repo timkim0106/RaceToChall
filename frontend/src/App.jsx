@@ -57,7 +57,7 @@ function App() {
 			<Route path="/" element={<HomePage />} />
 			<Route path="/signup" element={<SignUp />} />
 			{/* Some people name it /races or /dashboard, etc. */}
-			<Route path="/loggedin" element={<LoggedIn />} />
+			<Route path="/:username" element={<LoggedIn />} />
 		  </Routes>
 		</Router>
 	  );
