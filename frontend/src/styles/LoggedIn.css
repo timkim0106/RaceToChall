@@ -1,0 +1,87 @@
+.loggedin-page {
+    height: 100vh;
+    background: #5b4f39; /* Your brownish background */
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* NAVBAR STYLES */
+  .loggedin-navbar {
+    display: flex;
+    align-items: center;
+    background-color: #3c2f1d;
+    padding: 10px 20px;
+  }
+  
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #aaa;
+    margin-right: 20px;
+  }
+  
+  .nav-button {
+    margin-right: 20px;
+    padding: 8px 14px;
+    background-color: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  /* MAIN RACES SECTION */
+  .races-container {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .current-races,
+  .popular-races {
+    width: 200px;
+    margin-right: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  /* The vertical divider between Current and Popular races */
+  .vertical-divider {
+    width: 2px;
+    background-color: #aaa;
+    margin: 0 20px;
+  }
+  
+  /* Race cards are placeholders for actual data */
+  .race-card {
+    width: 200px;
+    height: 60px;
+    background-color: #9d9282;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Friends panel on the far right */
+  .friends-panel {
+    margin-left: auto;
+    width: 150px;
+  }
+  
+  .friends-panel h3 {
+    margin-bottom: 10px;
+  }
+  
+  .friend-box {
+    width: 100%;
+    height: 40px;
+    background-color: #9d9282;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  

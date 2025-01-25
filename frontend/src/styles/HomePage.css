@@ -1,0 +1,27 @@
+.home-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: #5b4f39; /* Your brownish background */
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.home-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-actions button {
+  padding: 10px 20px;
+  background-color: #3c2f1d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}

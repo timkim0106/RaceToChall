@@ -1,19 +1,46 @@
 import React from "react";
-import "./HomePage.css";
+import "../styles/HomePage.css"; 
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
+  const navigate = useNavigate();
   return (
     <div className="page-wrapper">
-      {/* Top Navigation Bar */}
-      <nav className="navbar">
+    {/* Top Navigation Bar */}
+    <nav className="navbar">
+      <button className="nav-button">Stats</button>
+      <button className="nav-button">DevBlog</button>
       <button className="nav-button">Races</button>
-        <button className="nav-button">Stats</button>
-        <button className="nav-button">DevBlog</button>
+    </nav>
 
-      </nav>
+    
+    <div className="home-page">
+    <div className="images-and-text">
+            <img
+              src="/images/challengerFlag.png"
+              alt="Left Icon"
+              className="side-image"
+            />
+            <img
+              src="/images/challengerIcon.png"
+              alt="Right Icon"
+              className="side-image"
+            />
+            </div>
+      <header className="home-header">
+        <h1>RaceToChall</h1>
+        <p>Create a race for the new season or sign up as a competitor</p>
+      </header>
 
-      <div className="main-content">
-        {/* Left Section: Login */}
+      
+
+      <div className="home-actions">
+
+
+        <button onClick={() =>navigate("/signup")}>Sign Up</button>
+         
+
+                {/* Left Section: Login */}
         <div className="login-section">
           <h2 className="login-title">Login</h2>
           <div className="form-group">
@@ -38,42 +65,16 @@ function HomePage() {
               placeholder="Enter password"
             />
           </div>
-          <button className="login-button">Login</button>
-        </div>
 
-        {/* Center Section: Title & Description with images */}
-        <div className="center-section">
-          <div className="images-and-text">
-            <img
-              src="/Users/timothykim/Desktop/hacka/hacka/frontend/src/components/images/challengerFlag.png"
-              alt="Left Icon"
-              className="side-image"
-            />
-
-            <div className="text-container">
-              <h1 className="site-title">RaceToChall</h1>
-              <p className="site-description">
-                Create a race for the new season or sign up as a competitor
-              </p>
-            </div>
-
-            <img
-              src="/Users/timothykim/Desktop/hacka/hacka/frontend/src/components/images/challengerFlag.png"
-              alt="Right Icon"
-              className="side-image"
-            />
-          </div>
-          {/* Sign Up Link at the bottom (centered) */}
-          <div className="sign-up-container">
-            <a href="#signup" className="sign-up-link">
-              Sign Up!
-            </a>
-          </div>
-        </div>
+          
+        <button onClick={() => window.location.href = "/login"}>
+          Log In
+        </button>
       </div>
     </div>
+    </div>
+    </div>
   );
-}
-
+  }
 
 export default HomePage;

@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-//import "./App.css";
-import HomePage from './components/HomePage.jsx';
+
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import SignUp from "./components/SignUp";
+import LoggedIn from "./components/LoggedIn";
+
 
 
 /*import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
@@ -48,12 +52,15 @@ function App() {
 	}, []);
 
 	return (
-		
-		<div>
-			<HomePage />
-		</div>
-		
-	);
+		<Router>
+		  <Routes>
+			<Route path="/" element={<HomePage />} />
+			<Route path="/signup" element={<SignUp />} />
+			{/* Some people name it /races or /dashboard, etc. */}
+			<Route path="/loggedin" element={<LoggedIn />} />
+		  </Routes>
+		</Router>
+	  );
 }
 
 export default App;
