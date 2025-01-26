@@ -41,6 +41,15 @@ function HomePage() {
   return (
     <div className="page-wrapper">
       {/* Top Navigation Bar */}
+      
+
+      <nav className="top-links">
+        <a href="">STATS</a>
+        <a href="">DEVBLOG</a>
+        <a href="/topraces">RACES</a>
+      </nav>
+
+      {/*
       <nav className="navbar">
         <button className="nav-button1">Stats</button>
         <button className="nav-button1">DevBlog</button>
@@ -51,9 +60,11 @@ function HomePage() {
           Races
         </button>
       </nav>
+      */}
 
 
       <div className="home-page">
+        {/*
         <div className="images-and-text">
           <img
             src="/images/challengerFlag.png"
@@ -66,24 +77,23 @@ function HomePage() {
             className="side-image-right"
           />
         </div>
+        */}
         <header className="home-header">
-          <h1>RaceToChall</h1>
-          <p>Create a race for the new season or sign up as a competitor</p>
+          <h1>R A C E &nbsp; T O  &nbsp; C H A L L </h1>
+          <h2>Create a race for the new season or sign up as a competitor</h2>
         </header>
 
         <div className="home-actions">
 
-
+          {/*
           <button className="signup" onClick={() => navigate("/signup")}>Sign Up</button>
+            */}
 
-
-          {/* Left Section: Login */}
+          {/* Login */}
           <div className="login-section">
-            <h2 className="login-title">Login</h2>
+            
             <div className="form-group">
-              <label htmlFor="username" className="label">
-                Username
-              </label>
+            <h3 className="login-title">Username</h3>
               <input
                 id="username"
                 type="text"
@@ -94,9 +104,7 @@ function HomePage() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="password" className="label">
-                Password
-              </label>
+            <h3 className="login-title">Password</h3>
               <input
                 id="password"
                 type="password"
@@ -108,7 +116,11 @@ function HomePage() {
             </div>
 
 
-            <button onClick={handleLogin}>Log In</button>
+            <button className="loginButton" onClick={handleLogin}>
+              Log In</button>
+            <p className="auth-create-account">
+          <a href="/signup">Create Account</a>
+        </p>
           </div>
         </div>
       </div>

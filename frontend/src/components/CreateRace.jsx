@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useParams, useNavigate } from "react-router-dom";
 import "../styles/CreateRace.css";
 
 function CreateRace() {
@@ -9,6 +9,9 @@ function CreateRace() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [inviteCode, setInviteCode] = useState("");
+
+  const { username } = useParams();
+  const navigate = useNavigate();
 
   // Example function to generate an invite code (or fetch from server).
   // The user said there's a token generator, so we can assume an API call or local method
@@ -21,6 +24,11 @@ function CreateRace() {
    catch (error) {
     console.error('Error generating invite code:', error);
   }
+  };
+
+  const handleCancel = () => {
+    // Go back to /:username
+    navigate(`/${username}`);
   };
 
   const handleSubmit = (e) => {
@@ -45,6 +53,7 @@ function CreateRace() {
   return (
     <div className="create-race-page">
       <h1>Create a New Race</h1>
+
       <form className="create-race-form" onSubmit={handleSubmit}>
         <label>Race Title</label>
         <input
@@ -101,6 +110,11 @@ function CreateRace() {
 
         <button type="submit" className="submit-button">Create Race</button>
       </form>
+
+      <button type="button" className="cancel" onClick={handleCancel}>
+        Cancel
+      </button>
+
     </div>
   );
 }

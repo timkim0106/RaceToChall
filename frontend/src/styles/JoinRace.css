@@ -1,4 +1,4 @@
-.create-race-page {
+.join-race-container {
   min-height: 100vh;          /* let it fill the screen */
   display: flex;
   flex-direction: column;     /* stack nav and auth vertically */
@@ -11,48 +11,56 @@
   background-size: cover;
   }
   
-  .create-race-form {
+  .form-group {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    margin-bottom: 20px;
   }
   
-  .create-race-form label {
+  .invite-label {
     font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
   }
   
-  .create-race-form input,
-  .create-race-form textarea,
-  .create-race-form select {
+  .invite-textarea {
+    width: 100%;
+    height: 20px;
     padding: 8px;
+    resize: none;
     border-radius: 4px;
     border: 1px solid #ccc;
+    font-family: inherit;
   }
   
-  .invite-code-section {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .invite-code-gen {
+  .buttons-container {
     display: flex;
     gap: 10px;
-    
+    justify-content: center;
   }
   
-  .submit-button {
-    padding: 10px;
-    background: #997113;
-    color: #edb022;
-    border: none;
-    border-radius: 6px;
+  .join-button,
+  .back-button {
+    padding: 10px 20px;
     cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #fff;
+  }
   
+  .join-button {
+    background: #997113; 
+  
+    color:#edb022;
+  }
+  
+  .back-button {
+    background: #997113; 
+    color:#edb022;
   }
   
 
-  .cancel{
-    margin-top: 5px;
-    background: #997113;
-    color:#edb022;
+  .h1{
+    font-size: 50px;
   }

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "../styles/TopRaces.css";
+import { useNavigate } from "react-router-dom";
+import "../styles/TopRaces.css"; 
 
 function TopRaces() {
   const [topRaces, setTopRaces] = useState([]);
+  const navigate = useNavigate();
 
   // fetch the top races from your server
   useEffect(() => {
@@ -11,43 +13,31 @@ function TopRaces() {
     //   .then((data) => setTopRaces(data))
     //   .catch((err) => console.error(err));
 
-    // fake data 
+    // fake data
     setTopRaces([
-      { id: 1, title: "Challenger Sprint", participants: 42 },
-      { id: 2, title: "Marathon to Master", participants: 35 },
-      { id: 3, title: "Climb to Challenger", participants: 50 },
+      { id: 1, title: "Race To Challenger", participants: 72 },
+      { id: 2, title: "Marathon to Master", participants: 55 },
+      { id: 3, title: "Climb to Challenger", participants: 49 },
+      { id: 4, title: "RACE 4", participants: 41 },
+      { id: 5, title: "First To Iron", participants: 5 },
+
     ]);
   }, []);
 
   return (
-    <div style={styles.container}>
-      <h1>Top Races</h1>
-      <ul style={styles.raceList}>
+    <div className="top-races-container">
+      <h1>T O P &nbsp; R A C E S</h1>
+      
+      <ul className="top-races-list">
         {topRaces.map((race) => (
-          <li key={race.id} style={styles.raceItem}>
+          <li key={race.id} className="top-race-item">
             <strong>{race.title}</strong> — {race.participants} participants
           </li>
         ))}
       </ul>
+      <button onClick={() => navigate("/")}>Back</button>
     </div>
   );
 }
-
-const styles = {
-    container: {
-      padding: 20,
-      fontFamily: "Arial, sans-serif",
-    },
-    raceList: {
-      listStyle: "none",
-      paddingLeft: 0,
-    },
-    raceItem: {
-      marginBottom: 10,
-      background: "#eee",
-      padding: 10,
-      borderRadius: 6,
-    },
-  };
 
 export default TopRaces;

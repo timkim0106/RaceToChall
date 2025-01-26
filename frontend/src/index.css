@@ -1,7 +1,8 @@
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: Beaufort, spiegel, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
+
 
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);
@@ -24,16 +25,16 @@ a:hover {
 }
 
 body {
-	font-family: beaufort;
+
+	font-family: Beaufort;
 	margin: 0;
 	display: block;
-	place-items: center;
+	/* place-items: center; */
 	min-width: 320px;
 	min-height: 100vh;
 }
 
 h1 {
-	font-size: 3.2em;
 	line-height: 1.1;
 }
 
@@ -44,7 +45,8 @@ button {
 	font-size: 1em;
 	font-weight: 500;
 	font-family: inherit;
-	background-color: #1a1a1a;
+	color: #edb022;
+	background-color: #997113;
 	cursor: pointer;
 	transition: border-color 0.25s;
 }

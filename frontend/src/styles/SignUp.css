@@ -1,12 +1,17 @@
-.signup-page {
-    max-width: 400px;
-    margin: 80px auto;
-    background: #fafafa;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
 
-  }
+
+.signup-page{
+  min-height: 100vh;          /* let it fill the screen */
+  display: flex;
+  flex-direction: column;     /* stack nav and auth vertically */
+  align-items: center;        /* center horizontally */
+  justify-content: flex-start; /* top alignment by default */
+  padding-top: 30px;          /* add some top spacing */
+  background-image: url("/images/background2.png");
+  background-repeat: no-repeat;
+  color: #edb022;
+  background-size: cover;
+}
   
   .signup-error {
     color: red;
@@ -15,13 +20,14 @@
   
   .signup-form {
     display: flex;
+    text-align: center;
     flex-direction: column;
-    gap: 15px;
+    gap: 3px;
   }
   
   .signup-form label {
     font-weight: bold;
-    text-align: left;
+    text-align: center;
   }
   
   .signup-form input {
@@ -31,9 +37,9 @@
   }
   
   .signup-form button {
-    padding: 10px;
-    background-color: #3c2f1d;
-    color: #fff;
+    padding: 4px;
+    background-color: #997113;
+    color: #edb022;
     border: none;
     border-radius: 6px;
     cursor: pointer;

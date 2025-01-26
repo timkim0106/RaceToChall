@@ -35,26 +35,58 @@ function LoggedIn() {
   }, [username]);
 
   const handleCreateRace = () => {
-    navigate("/createrace");
+    navigate(`/${username}/createrace`);
+  };
+
+  const handleJoinRace = () => {
+    // Navigate to your join race page
+    navigate("/joinrace");
+  };
+
+  const handleLogout = () => {
+
+    // We can maybe clear the "logged in" state or tokens here
+    navigate("/");
   };
 
   return (
     <div className="loggedin-page">
-      {/* Top Nav Bar */}
-      <nav className="loggedin-navbar">
-        <div className="profile-icon"></div>
- 
-        <button className="nav-button" onClick={handleCreateRace}>
-          Create Race
+
+      <nav className="top-links">
+
+
+        <button className="borderless" onClick={handleCreateRace}>
+          <h3>Create Race</h3>
         </button>
+        
+        <button className="borderless" onClick={handleJoinRace}>
+          <h3>Join Race</h3>
+        </button>
+
+        <button className="borderless" onClick={handleLogout}>
+          <h3>Log Out</h3>
+        </button>
+      </nav>
+      {/* Top Nav Bar 
+      <nav className="loggedin-navbar">
+        
+ 
+       
+
+        
+        <div className="profile-icon"></div>
         <button className="nav-button">Stats</button>
         <button className="nav-button">Settings</button>
         <button className="nav-button">Friends</button>
+        
+
       </nav>
+      */}
+      
 
       <div className="races-container">
         <div className="current-races">
-          <h2>Current Races for {username}</h2>
+          <h2> {username}'s Races</h2>
           {currentRaces.map((race) => (
             <div key={race.id} className="race-card">
               {race.title}
@@ -66,20 +98,21 @@ function LoggedIn() {
         <div className="vertical-divider"></div>
 
         <div className="popular-races">
-          <h2>Popular Races</h2>
+          <h2>Top Races</h2>
           {popularRaces.map((race) => (
             <div key={race.id} className="race-card">
               {race.title}
             </div>
           ))}
         </div>
-
+{/*
         <div className="friends-panel">
           <h3>Friends</h3>
           <div className="friend-box">Friend 1</div>
           <div className="friend-box">Friend 2</div>
           <div className="friend-box">Friend 3</div>
         </div>
+*/}
       </div>
     </div>
   );

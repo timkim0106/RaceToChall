@@ -1,0 +1,31 @@
+
+
+
+  .top-races-container {
+    min-height: 100vh;          /* let it fill the screen */
+    display: flex;
+    flex-direction: column;     /* stack nav and auth vertically */
+    align-items: center;        /* center horizontally */
+    justify-content: flex-start; /* top alignment by default */
+    padding-top: 30px;          /* add some top spacing */
+    background-image: url("/images/background2.png");
+    background-repeat: no-repeat;
+    color: #edb022;
+    background-size: cover;
+    
+  } 
+  .top-races-list {
+    list-style-type: none; /* remove default bullets */
+    padding-left: 0;       /* remove default left padding */
+
+}
+  
+  .top-race-item {
+    margin-bottom: 10px;
+    background-color: #4c390c; /* Dark background for contrast */
+    color: #edb022;
+    padding: 20px;
+    border-radius: 6px;
+    /* any other styling you want */
+  }
+  

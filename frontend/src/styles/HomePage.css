@@ -1,22 +1,78 @@
+
+.page-wrapper {
+  min-height: 100vh;          /* let it fill the screen */
+  display: flex;
+  flex-direction: column;     /* stack nav and auth vertically */
+  align-items: center;        /* center horizontally */
+  justify-content: flex-start; /* top alignment by default */
+  padding-top: 30px;          /* add some top spacing */
+  background-image: url("/images/background.png");
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  
+} 
+
 .home-page {
   min-height: 100vh;
   padding: 40px;
-  background: #3a3936;
-  /* Your brownish background */
-  color: #fff;
-  
-}
-.navbar{
 
-  background: #15587c;
+  /* text color */
+  color: #edb022;
   
 }
 
-.nav-button1 {
-  background-color: blue;
+
+/* TOP LINKS */
+.top-links {
+  display: flex;
+  gap: 4rem;                  /* spacing between links */
+  margin-bottom: 40px;        /* space below the links */
+  text-decoration: none;
+} 
+
+
+.top-links a {
+  text-decoration: none;
+  color: #edb022;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.top-links a:hover {
+  color: #997113;
+}
+
+.login-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* center content horizontally */
+  width: 300px;               /* fixed width for a nice layout */
+  padding: 20px; 
+  border-radius: 8px;
+}
+
+/* Create account link */
+.auth-create-account a {
+  color: #edb022;
+  text-decoration: underline;
+}
+
+.auth-create-account a:hover {
+  color: #997113;
 }
 
 
+.input{
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
 .side-image-left {
 
   position: absolute; 
@@ -28,12 +84,15 @@
   position: absolute;
   right: 305px;
 }
+*/
+
 
 .signup {
   height: 40px;
   margin-bottom: 20px;
 
 }
+  
 
 .home-header {
   text-align: center;
@@ -45,15 +104,30 @@
   display: flex;
   justify-content: center;
   gap: 20px;
+  /*text-shadow: #6374AB 2px -2px 2px;*/
 }
 
 .home-actions button {
   padding: 10px 20px;
-  background-color: #3c2f1d;
-  color: #fff;
+  background-color: #997113;
+  color: #edb022;
   border: none;
   cursor: pointer;
   border-radius: 6px;
+}
+
+
+
+h1 {
+  font-size: 60px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 20px;
 }
 
 

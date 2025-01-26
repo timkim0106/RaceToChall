@@ -8,6 +8,7 @@ import SignUp from "./components/SignUp";
 import LoggedIn from "./components/LoggedIn";
 import TopRaces from "./components/TopRaces";
 import CreateRace from "./components/CreateRace";
+import JoinRace from "./components/JoinRace";
 
 
 
@@ -66,8 +67,12 @@ function App() {
 			{/* Some people name it /races or /dashboard, etc. */}
 			<Route path="/:username" element={<LoggedIn />} />
 
+			<Route path="/joinrace" element={<JoinRace />} />
+
+
 			 {/* Create race form */}
-			 <Route path="/createrace" element={<CreateRace />} />
+			 <Route path="/:username/createrace" element={<CreateRace />} />
+
 		  </Routes>
 		</Router>
 	  );

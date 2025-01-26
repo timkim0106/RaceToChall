@@ -1,13 +1,35 @@
 .loggedin-page {
-    height: 100vh;
-    background: #5b4f39; /* Your brownish background */
-  
-    color: #fff;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;          /* let it fill the screen */
+  display: flex;
+  flex-direction: column;     /* stack nav and auth vertically */
+  align-items: center;        /* center horizontally */
+  justify-content: flex-start; /* top alignment by default */
+  padding-top: 30px;          /* add some top spacing */
+  background-image: url("/images/background2.png");
+  background-repeat: no-repeat;
+  color: #edb022;
+  background-size: cover;
   }
-  
-  /* NAVBAR STYLES */
+
+  .borderless {
+    display: flex;
+    gap: 4rem;                  /* spacing between links */
+    margin-bottom: 40px;        /* space below the links */
+    text-decoration: none;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #edb022;
+  }
+
+  .borderless a {
+
+    text-decoration: none;
+    color: #edb022;
+    font-weight: bold;
+    transition: color 0.2s;
+  }
+  /* NAVBAR STYLES 
   .loggedin-navbar {
     display: flex;
     align-items: center;
@@ -32,6 +54,7 @@
     border-radius: 4px;
     font-weight: bold;
   }
+  */
   
   /* MAIN RACES SECTION */
   .races-container {
@@ -43,6 +66,7 @@
   
   .current-races,
   .popular-races {
+    
     width: 200px;
     margin-right: 20px;
   }
@@ -51,10 +75,10 @@
     margin-bottom: 10px;
   }
   
-  /* The vertical divider between Current and Popular races */
+  /* The vertical divider between Your and Top races */
   .vertical-divider {
     width: 2px;
-    background-color: #aaa;
+    background-color: #997113;
     margin: 0 20px;
   }
   
@@ -62,12 +86,12 @@
   .race-card {
     width: 200px;
     height: 60px;
-    background-color: #9d9282;
+    background-color: #997113;
     border-radius: 8px;
     margin-bottom: 10px;
   }
   
-  /* Friends panel on the far right */
+  /* Friends panel on the far right 
   .friends-panel {
     margin-left: auto;
     width: 150px;
@@ -84,4 +108,6 @@
     border-radius: 6px;
     margin-bottom: 8px;
   }
+
+  */
   

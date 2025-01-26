@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/SignUp.css";
 
 function SignUp() {
@@ -6,6 +7,8 @@ function SignUp() {
     const [password, setPassword] = useState("");
     const [ign, setIgn] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+
+      const navigate = useNavigate();
 
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -22,10 +25,10 @@ function SignUp() {
 
     return (
         <div className="signup-page">
-            <h1>Create an Account</h1>
+            <h1>C R E A T E &nbsp; A N &nbsp; A C C O U N T</h1>
             {errorMessage && <p className="signup-error">{errorMessage}</p>}
             <form className="signup-form" onSubmit={handleSignUp}>
-                <label>Username</label>
+                <h2>Username</h2>
                 <input
                     type="text"
                     value={username}
@@ -33,7 +36,7 @@ function SignUp() {
                     onChange={(e) => setUsername(e.target.value)}
                 />
 
-                <label>Password</label>
+                <h2>Password</h2>
                 <input
                     type="password"
                     value={password}
@@ -41,7 +44,7 @@ function SignUp() {
                     onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <label>IGN</label>
+                <h2> IGN</h2>
                 <input
                     type="text"
                     value={ign}
@@ -51,7 +54,12 @@ function SignUp() {
 
 
 
+
+
                 <button type="submit">Sign Up</button>
+                <button onClick={() => navigate("/")}>Back</button>
+                
+
             </form>
         </div>
     );
