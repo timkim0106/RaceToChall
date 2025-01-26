@@ -26,8 +26,9 @@ def init_db():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         race_name TEXT NOT NULL,
         created_by INTEGER NOT NULL,
-        FOREIGN KEY (created_by) REFERENCES Users(id),
-        token_key TEXT NOT NULL
+        token_key TEXT NOT NULL,
+        FOREIGN KEY (created_by) REFERENCES Users(id)
+        
     );
     ''')
 

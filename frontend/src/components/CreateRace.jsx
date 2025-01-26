@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import "../styles/CreateRace.css";
 
 function CreateRace() {
@@ -11,9 +12,10 @@ function CreateRace() {
 
   // Example function to generate an invite code (or fetch from server).
   // The user said there's a token generator, so we can assume an API call or local method
-  const generateInviteCode = () => {
+  const generateInviteCode =  async () => {
    try {
-    const response = await.axios.get('http://localhost:5000/generate-invite-code');
+    const response = await fetch('http://127.0.0.1:5000/generate-invite-code');
+    console.log(response)
     setInviteCode(response.data.inviteCode); 
    }
    catch (error) {

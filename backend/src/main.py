@@ -27,8 +27,9 @@ def register_user():
 # Generate invite code
 @app.route('/generate-invite-code', methods = ['GET'])
 def generate_invite_code():
-    code = generate_code()
-    return jsonify({'inviteCode': code})
+    code = jsonify({'inviteCode': generate_code()})
+    print(code)
+    return code
 if __name__ == "__main__":
     init_db()  # Ensure the database is initialized
     app.run(debug=True)
