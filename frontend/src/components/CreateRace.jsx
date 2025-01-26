@@ -12,9 +12,13 @@ function CreateRace() {
   // Example function to generate an invite code (or fetch from server).
   // The user said there's a token generator, so we can assume an API call or local method
   const generateInviteCode = () => {
-    // For demonstration, random 6-char string:
-    const code = Math.random().toString(36).substring(2, 8).toUpperCase();
-    setInviteCode(code);
+   try {
+    const response = await.axios.get('http://localhost:5000/generate-invite-code');
+    setInviteCode(response.data.inviteCode); 
+   }
+   catch (error) {
+    console.error('Error generating invite code:', error);
+  }
   };
 
   const handleSubmit = (e) => {

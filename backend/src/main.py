@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from database import connect_db, init_db
+from joincode import generate_code
 
 app = Flask(__name__)
 
@@ -23,7 +24,11 @@ def register_user():
         return jsonify({'error': str(e)}), 500
     finally:
         conn.close()
-
+# Generate invite code
+@app.route('/generate-invite-code', methods = ['GET'])
+def generate_invite_code():
+    code = generate_code()
+    return jsonify({'inviteCode': code})
 if __name__ == "__main__":
     init_db()  # Ensure the database is initialized
     app.run(debug=True)
