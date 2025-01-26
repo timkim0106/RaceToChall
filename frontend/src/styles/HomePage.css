@@ -1,15 +1,44 @@
 .home-page {
   min-height: 100vh;
   padding: 40px;
-  background: #5b4f39;
+  background: #3a3936;
   /* Your brownish background */
   color: #fff;
-  font-family: Arial, sans-serif;
+  
+}
+.navbar{
+
+  background: #15587c;
+  
+}
+
+.nav-button1 {
+  background-color: blue;
+}
+
+
+.side-image-left {
+
+  position: absolute; 
+  left: 255px;
+
+}
+
+.side-image-right {
+  position: absolute;
+  right: 305px;
+}
+
+.signup {
+  height: 40px;
+  margin-bottom: 20px;
+
 }
 
 .home-header {
   text-align: center;
   margin-bottom: 30px;
+
 }
 
 .home-actions {
@@ -26,3 +55,11 @@
   cursor: pointer;
   border-radius: 6px;
 }
+
+
+/*
+.login-section {
+  display: absolute;
+  bottom: 100px;
+}
+  */

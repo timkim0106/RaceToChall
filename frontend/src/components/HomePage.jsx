@@ -42,12 +42,12 @@ function HomePage() {
     <div className="page-wrapper">
       {/* Top Navigation Bar */}
       <nav className="navbar">
-        <button className="nav-button">Stats</button>
-        <button className="nav-button">DevBlog</button>
+        <button className="nav-button1">Stats</button>
+        <button className="nav-button1">DevBlog</button>
         
         
 
-        <button className="nav-button" onClick={() => navigate("/topraces")}>
+        <button className="nav-button1" onClick={() => navigate("/topraces")}>
           Races
         </button>
       </nav>
@@ -58,12 +58,12 @@ function HomePage() {
           <img
             src="/images/challengerFlag.png"
             alt="Left Icon"
-            className="side-image"
+            className="side-image-left"
           />
           <img
             src="/images/challengerIcon.png"
             alt="Right Icon"
-            className="side-image"
+            className="side-image-right"
           />
         </div>
         <header className="home-header">
@@ -74,7 +74,7 @@ function HomePage() {
         <div className="home-actions">
 
 
-          <button onClick={() => navigate("/signup")}>Sign Up</button>
+          <button className="signup" onClick={() => navigate("/signup")}>Sign Up</button>
 
 
           {/* Left Section: Login */}

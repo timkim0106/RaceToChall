@@ -1,7 +1,7 @@
 .loggedin-page {
     height: 100vh;
     background: #5b4f39; /* Your brownish background */
-    font-family: Arial, sans-serif;
+  
     color: #fff;
     display: flex;
     flex-direction: column;
