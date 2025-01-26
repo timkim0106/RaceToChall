@@ -11,27 +11,16 @@ function LoggedIn() {
 
   useEffect(() => {
     // Fetch the user's current races
-    // fetch(`/api/current-races?user=${username}`)
-    //   .then((res) => res.json())
-    //   .then((data) => setCurrentRaces(data));
-
-    // For now, placeholder:
-    setCurrentRaces([
-      { id: 1, title: "Road to Diamond" },
-      { id: 2, title: "Master Marathon" },
-    ]);
+    fetch(`http://127.0.0.1:5000/api/race/user-races/${username}`)
+      .then((res) => res.json())
+      .then((data) => setCurrentRaces(data.slice(0, 5))) // Display up to 5 races
+      .catch((error) => console.error("Error fetching user races:", error));
 
     // Fetch the popular races (top 3)
-    // fetch("/api/popular-races?limit=3")
-    //   .then((res) => res.json())
-    //   .then((data) => setPopularRaces(data));
-
-    // Placeholder:
-    setPopularRaces([
-      { id: 10, title: "Dragon's Descent" },
-      { id: 11, title: "Baron Blitz" },
-      { id: 12, title: "Challenger Chase" },
-    ]);
+    fetch("http://127.0.0.1:5000/api/race/top-races")
+      .then((res) => res.json())
+      .then((data) => setPopularRaces(data.slice(0, 5))) // Display up to 5 races
+      .catch((error) => console.error("Error fetching top races:", error));
   }, [username]);
 
   const handleCreateRace = () => {
@@ -39,22 +28,21 @@ function LoggedIn() {
   };
 
   const handleJoinRace = () => {
-    // Navigate to your join race page
-    navigate("/joinrace");
+    navigate(`/${username}/joinrace`);
   };
 
   const handleLogout = () => {
-
     // We can maybe clear the "logged in" state or tokens here
     navigate("/");
   };
 
+  const handleRaceClick = (raceId) => {
+    navigate(`/leaderboard/${raceId}`);
+  };
+
   return (
     <div className="loggedin-page">
-
       <nav className="top-links">
-
-
         <button className="borderless" onClick={handleCreateRace}>
           <h3>Create Race</h3>
         </button>
@@ -67,28 +55,12 @@ function LoggedIn() {
           <h3>Log Out</h3>
         </button>
       </nav>
-      {/* Top Nav Bar 
-      <nav className="loggedin-navbar">
-        
- 
-       
-
-        
-        <div className="profile-icon"></div>
-        <button className="nav-button">Stats</button>
-        <button className="nav-button">Settings</button>
-        <button className="nav-button">Friends</button>
-        
-
-      </nav>
-      */}
-      
 
       <div className="races-container">
         <div className="current-races">
-          <h2> {username}'s Races</h2>
+          <h2>{username}'s Races</h2>
           {currentRaces.map((race) => (
-            <div key={race.id} className="race-card">
+            <div key={race.id} className="race-card" onClick={() => handleRaceClick(race.id)}>
               {race.title}
             </div>
           ))}
@@ -100,19 +72,11 @@ function LoggedIn() {
         <div className="popular-races">
           <h2>Top Races</h2>
           {popularRaces.map((race) => (
-            <div key={race.id} className="race-card">
+            <div key={race.id} className="race-card" onClick={() => handleRaceClick(race.id)}>
               {race.title}
             </div>
           ))}
         </div>
-{/*
-        <div className="friends-panel">
-          <h3>Friends</h3>
-          <div className="friend-box">Friend 1</div>
-          <div className="friend-box">Friend 2</div>
-          <div className="friend-box">Friend 3</div>
-        </div>
-*/}
       </div>
     </div>
   );

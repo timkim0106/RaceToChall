@@ -7,28 +7,52 @@ function SignUp() {
     const [password, setPassword] = useState("");
     const [ign, setIgn] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
 
-      const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    const handleSignUp = (e) => {
+    const handleSignUp = async (e) => {
         e.preventDefault();
-        if (!username || !password) {
+        setErrorMessage(""); // Clear previous errors
+        setSuccessMessage(""); // Clear previous success messages
+
+        if (!username || !password || !ign) {
             setErrorMessage("Please fill out all fields.");
             return;
         }
-        // Hook up League API / server in future
-        console.log("Creating account for:", username);
 
-        //  mock a success scenario or navigate to login.
-        window.location.href = "/";
+        try {
+            const response = await fetch("http://127.0.0.1:5000/api/auth/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, password, ign }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setSuccessMessage("Account created successfully!");
+                console.log("Account created:", data);
+                // Navigate to login page after a short delay
+                setTimeout(() => navigate("/"), 2000);
+            } else {
+                const errorData = await response.json();
+                setErrorMessage(errorData.error || "Failed to create account.");
+            }
+        } catch (error) {
+            console.error("Error during sign-up:", error);
+            setErrorMessage("An unexpected error occurred. Please try again.");
+        }
     };
 
     return (
         <div className="signup-page">
-            <h1>C R E A T E &nbsp; A N &nbsp; A C C O U N T</h1>
+            <h1>Create an Account</h1>
             {errorMessage && <p className="signup-error">{errorMessage}</p>}
+            {successMessage && <p className="signup-success">{successMessage}</p>}
             <form className="signup-form" onSubmit={handleSignUp}>
-                <h2>Username</h2>
+                <label>Username</label>
                 <input
                     type="text"
                     value={username}
@@ -36,7 +60,7 @@ function SignUp() {
                     onChange={(e) => setUsername(e.target.value)}
                 />
 
-                <h2>Password</h2>
+                <label>Password</label>
                 <input
                     type="password"
                     value={password}
@@ -44,22 +68,18 @@ function SignUp() {
                     onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <h2> IGN</h2>
+                <label>IGN</label>
                 <input
                     type="text"
                     value={ign}
                     placeholder="Enter Game Name + #NA1"
                     onChange={(e) => setIgn(e.target.value)}
-                />  
-
-
-
-
+                />
 
                 <button type="submit">Sign Up</button>
-                <button onClick={() => navigate("/")}>Back</button>
-                
-
+                <button type="button" onClick={() => navigate("/")}>
+                    Back
+                </button>
             </form>
         </div>
     );

@@ -1,0 +1,38 @@
+.leaderboard-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .leaderboard-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    text-align: left;
+    cursor: pointer; /* Change cursor to pointer (hand) on hover */
+  }
+  
+  .leaderboard-card h3 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .leaderboard-card p {
+    margin: 5px 0;
+  }
+  
+  .leaderboard-error {
+    color: red;
+  }
+  
+  .leaderboard-success {
+    color: green;
+  }
